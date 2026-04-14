@@ -1,0 +1,347 @@
+Password Authentication System (Python)
+✅ Features included:
+Strong password rules (length, uppercase, lowercase, number, special char)
+Hidden password input
+Limited login attempts
+Password stored securely (hashed)
+💻 Code:
+import re
+import hashlib
+import getpass
+
+# Function to hash password
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+# Function to check password strength
+def is_strong_password(password):
+    if len(password) < 8:
+        return False, "Password must be at least 8 characters long"
+    if not re.search(r"[A-Z]", password):
+        return False, "Must include at least one uppercase letter"
+    if not re.search(r"[a-z]", password):
+        return False, "Must include at least one lowercase letter"
+    if not re.search(r"[0-9]", password):
+        return False, "Must include at least one number"
+    if not re.search(r"[!@#$%^&*]", password):
+        return False, "Must include at least one special character"
+    
+    return True, "Strong password"
+
+# Registration
+print("=== Register ===")
+while True:
+    password = getpass.getpass("Create Password: ")
+    valid, message = is_strong_password(password)
+    
+    if valid:
+        print("✅ Password created successfully!\n")
+        stored_password = hash_password(password)
+        break
+    else:
+        print(f"❌ {message}\nTry again.\n")
+
+# Login system
+print("=== Login ===")
+attempts = 3
+
+while attempts > 0:
+    login_password = getpass.getpass("Enter Password: ")
+    
+    if hash_password(login_password) == stored_password:
+        print("✅ Login Successful!")
+        break
+    else:
+        attempts -= 1
+        print(f"❌ Incorrect password. Attempts left: {attempts}")
+
+if attempts == 0:
+    print("🔒 Account locked due to too many failed attempts.")
+🧠 How it works (simple explanation for viva)
+Password is checked using conditions + regex
+It is converted into hash (SHA-256) → more secure
+During login, input password is hashed and compared
+User gets only 3 attempts
+
+
+Assignment: AI Around Me
+📝 10 Real-Life AI Applications (with simple explanation)
+Google Maps
+Uses ML to predict traffic and suggest fastest routes based on past and real-time data.
+YouTube Recommendations
+Suggests videos based on your watch history using recommendation algorithms.
+Instagram Feed
+Shows posts based on your likes, shares, and interactions using ML models.
+Voice Assistants (Siri / Google Assistant)
+Uses speech recognition and NLP to understand and respond to voice commands.
+Email Spam Filter
+Classifies emails as spam or not using trained ML classification models.
+Netflix Recommendations
+Suggests movies based on similarity with your past viewing behavior (collaborative filtering).
+Amazon Shopping Suggestions
+Recommends products based on browsing and purchase history.
+Face Unlock (Mobile)
+Uses computer vision to detect and recognize your face.
+Google Translate
+Uses neural networks to translate text between languages.
+Swiggy/Zomato Delivery Prediction
+Predicts delivery time using past order data, traffic, and distance.
+
+
+Assignment (12/02/2026)
+🧠 Smart Input Program
+💻 Code:
+# Taking user input
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+hobby = input("Enter your hobby: ")
+
+# Categorizing age
+if age < 13:
+    category = "Child"
+elif age < 20:
+    category = "Teenager"
+elif age < 60:
+    category = "Adult"
+else:
+    category = "Senior Citizen"
+
+# Personalized message
+print("\n--- Personalized Message ---")
+print(f"Hello {name}!")
+print(f"You are a {category}.")
+print(f"It's great that you enjoy {hobby}!")
+
+
+Assignment (17/02/2026)
+🔢 Logic Builder (FizzBuzz)
+💻 Code:
+def fizz_buzz():
+    fizz = 0
+    buzz = 0
+    fizzbuzz = 0
+
+    for i in range(1, 51):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+            fizzbuzz += 1
+        elif i % 3 == 0:
+            print("Fizz")
+            fizz += 1
+        elif i % 5 == 0:
+            print("Buzz")
+            buzz += 1
+        else:
+            print(i)
+
+    print("\n--- Count ---")
+    print("Fizz:", fizz)
+    print("Buzz:", buzz)
+    print("FizzBuzz:", fizzbuzz)
+
+fizz_buzz()
+ Explanation
+Uses loop from 1 to 50
+Checks divisibility using %
+Counts occurrences using variables
+
+
+Assignment (19/02/2026)
+🎓 Student Data Manager
+💻 Code:
+students = {
+    "Amit": 85,
+    "Rahul": 78,
+    "Sneha": 92,
+    "Priya": 88,
+    "Kiran": 74
+}
+
+# Calculate average
+average = sum(students.values()) / len(students)
+
+# Find topper
+topper = max(students, key=students.get)
+
+# Assign grades
+grades = {}
+for name, marks in students.items():
+    if marks >= 90:
+        grades[name] = "A"
+    elif marks >= 75:
+        grades[name] = "B"
+    else:
+        grades[name] = "C"
+
+# Output
+print("Average Marks:", average)
+print("Topper:", topper)
+
+print("\nGrades:")
+for name in students:
+    print(name, ":", grades[name])
+Explanation
+Uses dictionary to store student data
+max() finds topper
+sum() calculates average
+Loop assigns grades
+
+
+Assignment (20/02/2026)
+⚡ NumPy Speed Test
+💻 Code:
+import time
+import numpy as np
+
+# Python list
+start = time.time()
+lst = [i * 2 for i in range(1000000)]
+end = time.time()
+print("List Time:", end - start)
+
+# NumPy array
+start = time.time()
+arr = np.arange(1000000) * 2
+end = time.time()
+print("NumPy Time:", end - start)
+
+
+Assignment (24/02/2026)
+🕵️ Dataset Detective
+💻 Code:
+import pandas as pd
+
+# Load dataset (example: CSV file)
+df = pd.read_csv("data.csv")
+
+# Show top rows
+print("Top 5 Rows:")
+print(df.head())
+
+# Find column with highest value (numeric)
+print("\nMax values in each column:")
+print(df.max(numeric_only=True))
+
+# Count missing values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Basic info
+print("\nDataset Info:")
+print(df.info())
+📊 5 Insights (example you can write)
+Dataset contains both numerical and categorical data
+Some columns have missing values
+One column has the highest values indicating importance
+Data types include int, float, and object
+Cleaning is required before analysis
+
+
+Assignment (26/02/2026)
+🩺 Data Doctor (Data Cleaning)
+💻 Code:
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# Remove duplicates
+df = df.drop_duplicates()
+
+# Handle missing values
+df = df.fillna(method='ffill')
+
+# Standardize text (lowercase)
+df.columns = df.columns.str.lower()
+
+print("Cleaned Data:")
+print(df.head())
+🧠 Why Cleaning Matters
+Improves model accuracy
+Removes noise and errors
+Ensures consistency
+Helps better analysis
+🧾 Assignment (28/02/2026)
+📊 Storytelling with Graphs
+💻 Code:
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Sample data
+data = {
+    "Category": ["A", "B", "C", "D"],
+    "Values": [10, 20, 15, 25]
+}
+
+df = pd.DataFrame(data)
+
+# Bar Chart
+plt.bar(df["Category"], df["Values"])
+plt.title("Bar Chart")
+plt.show()
+
+# Pie Chart
+plt.pie(df["Values"], labels=df["Category"], autopct='%1.1f%%')
+plt.title("Pie Chart")
+plt.show()
+
+# Histogram
+plt.hist(df["Values"])
+plt.title("Histogram")
+plt.show()
+
+🧾 Short Data Story
+Category D has highest value
+Category A is lowest
+Distribution shows variation in data
+
+
+
+Assignment (02/03/2026)
+💡 ML Idea Generator
+📌 Ideas:
+College
+Predict student performance
+Input → attendance, study hours
+Output → marks
+Healthcare
+Disease prediction
+Input → symptoms
+Output → disease risk
+Shopping
+Product recommendation
+Input → user behavior
+Output → suggested items
+Transportation
+Traffic prediction
+Input → GPS + time
+Output → congestion level
+
+
+
+Assignment (03/03/2026)
+Build Your First Dataset
+ Code:
+import pandas as pd
+
+data = {
+    "Study Hours": [1, 2, 3, 4, 5],
+    "Marks": [40, 50, 60, 70, 80]
+}
+
+df = pd.DataFrame(data)
+print(df)
+ Explanation
+Feature → Study Hours
+Label → Marks
+Relationship → More study → higher marks
+
+
+
+
+
+
+
+
+Pie chart shows proportion clearly
+
+
