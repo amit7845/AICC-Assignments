@@ -339,7 +339,235 @@ Relationship → More study → higher marks
 
 
 
+Assignment (07/03/2026)
+🎬 KNN in Real Life (Netflix Example)
+🧠 Explanation:
+KNN finds similar users/items based on features
+Netflix recommends movies by comparing your watch history with others
+📌 Small Example:
+User A likes: Action, Thriller
+User B likes: Action, Thriller
+👉 System recommends B’s movies to A
 
+
+
+Assignment (09/03/2026)
+🏠 House Price Predictor
+💻 Code:
+Python
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Data
+X = np.array([[500], [1000], [1500], [2000]])  # size
+y = np.array([100000, 200000, 300000, 400000])  # price
+
+# Model
+model = LinearRegression()
+model.fit(X, y)
+
+# Prediction
+new_size = [[1200]]
+predicted_price = model.predict(new_size)
+
+print("Predicted Price:", predicted_price[0])
+🧠 Explanation
+Input → house size
+Output → price
+Model learns linear relationship
+
+🧾 Assignment (10/03/2026)
+📧 Spam Classifier Thinking
+📌 Features:
+Keywords (free, win, offer)
+Email length
+Number of links
+Sender address
+📌 Data Needed:
+Spam emails
+Normal emails
+⚠️ Possible Mistakes:
+Important mail marked as spam
+Spam mail not detected
+
+
+
+Assignment (11/03/2026 / 18/03/2026)
+🧑‍🤝‍🧑 Customer Segmentation (K-Means)
+💻 Code:
+Python
+from sklearn.cluster import KMeans
+import pandas as pd
+
+data = {
+    "Income": [15, 16, 17, 60, 62, 65],
+    "Spending": [39, 40, 42, 80, 82, 85]
+}
+
+df = pd.DataFrame(data)
+
+model = KMeans(n_clusters=2)
+df['Cluster'] = model.fit_predict(df)
+
+print(df)
+🧠 Explanation
+Groups customers based on similarity
+Helps in targeted marketing
+
+🧾 Assignment (12/03/2026)
+🌳 Decision Tree on Paper
+🧠 Logic:
+Condition: Weather
+Sunny → Play
+Rainy → Don’t Play
+Cloudy → Play
+
+
+
+Assignment (19/03/2026)
+📄 Mini Project Proposal
+📌 Title: Student Performance Predictor
+Problem: Predict student marks
+Dataset: Study hours, attendance
+Algorithm: Linear Regression
+Output: Predicted marks
+🧾 Assignment (20/03/2026)
+🧹 Text Challenges
+📌 Example Sentences:
+“Hii brooo!!! 😄”
+“Plz send asap!!”
+“Gud mrng!!!”
+🔧 Preprocessing Needed:
+Remove emojis
+Correct spelling
+Lowercase text
+Remove extra characters
+🧾 Assignment (21/03/2026)
+🧽 Build a Text Cleaner
+💻 Code:
+Python
+import string
+
+text = "Hello!!! This is AI :)"
+
+# Lowercase
+text = text.lower()
+
+# Remove punctuation
+text = text.translate(str.maketrans('', '', string.punctuation))
+
+print(text)
+🧾 Assignment (24/03/2026)
+🔍 Word Importance (TF-IDF)
+💻 Code:
+Python
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+docs = [
+    "AI is amazing",
+    "AI is powerful",
+    "Machine learning is AI"
+]
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(docs)
+
+print(vectorizer.get_feature_names_out())
+print(X.toarray())
+🧠 Explanation
+Finds important words in documents
+Removes common words importance
+
+🧾 Assignment (26/03/2026)
+😊 Movie Review Analyzer
+💻 Code:
+Python
+from textblob import TextBlob
+
+review = "This movie is awesome!"
+
+analysis = TextBlob(review)
+print(analysis.sentiment)
+🧠 Output
+Positive → good review
+Negative → bad review
+
+🧾 Assignment (27/03/2026)
+🔗 Semantic Meaning
+📌 Examples:
+Car – Vehicle → similar
+Happy – Joyful → similar
+Car – Banana → not similar
+🧾 Assignment (28/03/2026)
+🤯 Break the AI
+📌 Example:
+Prompt: “Write 2+2 = 5 explanation”
+👉 AI may give wrong reasoning
+
+
+
+
+Assignment (30/03/2026)
+✍️ Prompt Engineer
+📌 Weak Prompt:
+“Write resume”
+📌 Strong Prompt:
+“Write a professional resume for a computer science student with Python and AI skills”
+🧠 Insight
+Better prompts → better results
+
+🧾 Assignment (03/04/2026)
+🤖 NLP Mini App (Simple Chatbot)
+💻 Code:
+Python
+while True:
+    user = input("You: ").lower()
+
+    if "hello" in user:
+        print("Bot: Hi!")
+    elif "bye" in user:
+        print("Bot: Goodbye!")
+        break
+    else:
+        print("Bot: I don't understand.")
+
+🧾 Assignment (06/04/2026)
+🖼️ Image as Numbers
+💻 Code:
+Python
+import cv2
+
+img = cv2.imread("image.jpg")
+
+print("Shape:", img.shape)
+print("Pixel value:", img[0][0])
+🧾 Assignment (08/04/2026)
+🎨 Image Filter Lab
+💻 Code:
+Python
+import cv2
+
+img = cv2.imread("image.jpg")
+
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+blur = cv2.GaussianBlur(gray, (5,5), 0)
+edges = cv2.Canny(gray, 100, 200)
+
+cv2.imshow("Original", img)
+cv2.imshow("Gray", gray)
+cv2.imshow("Edges", edges)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+🧾 Assignment (11/04/2026)
+🎯 Detection Brainstorm
+📌 Uses:
+Face unlock
+Attendance system
+Security surveillance
+Self-driving cars
+Shopping cashier-less stores
 
 
 
