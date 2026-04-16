@@ -1,10 +1,10 @@
 Password Authentication System (Python)
-✅ Features included:
+Features included:
 Strong password rules (length, uppercase, lowercase, number, special char)
 Hidden password input
 Limited login attempts
 Password stored securely (hashed)
-💻 Code:
+ Code:
 import re
 import hashlib
 import getpass
@@ -35,11 +35,11 @@ while True:
     valid, message = is_strong_password(password)
     
     if valid:
-        print("✅ Password created successfully!\n")
+        print(" Password created successfully!\n")
         stored_password = hash_password(password)
         break
     else:
-        print(f"❌ {message}\nTry again.\n")
+        print(f" {message}\nTry again.\n")
 
 # Login system
 print("=== Login ===")
@@ -49,15 +49,15 @@ while attempts > 0:
     login_password = getpass.getpass("Enter Password: ")
     
     if hash_password(login_password) == stored_password:
-        print("✅ Login Successful!")
+        print(" Login Successful!")
         break
     else:
         attempts -= 1
-        print(f"❌ Incorrect password. Attempts left: {attempts}")
+        print(f" Incorrect password. Attempts left: {attempts}")
 
 if attempts == 0:
-    print("🔒 Account locked due to too many failed attempts.")
-🧠 How it works (simple explanation for viva)
+    print(" Account locked due to too many failed attempts.")
+ How it works (simple explanation for viva)
 Password is checked using conditions + regex
 It is converted into hash (SHA-256) → more secure
 During login, input password is hashed and compared
@@ -65,7 +65,7 @@ User gets only 3 attempts
 
 
 Assignment: AI Around Me
-📝 10 Real-Life AI Applications (with simple explanation)
+ 10 Real-Life AI Applications (with simple explanation)
 Google Maps
 Uses ML to predict traffic and suggest fastest routes based on past and real-time data.
 YouTube Recommendations
@@ -89,8 +89,8 @@ Predicts delivery time using past order data, traffic, and distance.
 
 
 Assignment (12/02/2026)
-🧠 Smart Input Program
-💻 Code:
+ Smart Input Program
+ Code:
 # Taking user input
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))
@@ -114,8 +114,8 @@ print(f"It's great that you enjoy {hobby}!")
 
 
 Assignment (17/02/2026)
-🔢 Logic Builder (FizzBuzz)
-💻 Code:
+Logic Builder (FizzBuzz)
+ Code:
 def fizz_buzz():
     fizz = 0
     buzz = 0
@@ -147,8 +147,8 @@ Counts occurrences using variables
 
 
 Assignment (19/02/2026)
-🎓 Student Data Manager
-💻 Code:
+Student Data Manager
+ Code:
 students = {
     "Amit": 85,
     "Rahul": 78,
@@ -188,8 +188,8 @@ Loop assigns grades
 
 
 Assignment (20/02/2026)
-⚡ NumPy Speed Test
-💻 Code:
+ NumPy Speed Test
+ Code:
 import time
 import numpy as np
 
@@ -207,8 +207,8 @@ print("NumPy Time:", end - start)
 
 
 Assignment (24/02/2026)
-🕵️ Dataset Detective
-💻 Code:
+ Dataset Detective
+Code:
 import pandas as pd
 
 # Load dataset (example: CSV file)
@@ -229,7 +229,7 @@ print(df.isnull().sum())
 # Basic info
 print("\nDataset Info:")
 print(df.info())
-📊 5 Insights (example you can write)
+5 Insights (example you can write)
 Dataset contains both numerical and categorical data
 Some columns have missing values
 One column has the highest values indicating importance
@@ -238,8 +238,8 @@ Cleaning is required before analysis
 
 
 Assignment (26/02/2026)
-🩺 Data Doctor (Data Cleaning)
-💻 Code:
+ Data Doctor (Data Cleaning)
+ Code:
 import pandas as pd
 
 df = pd.read_csv("data.csv")
@@ -255,14 +255,14 @@ df.columns = df.columns.str.lower()
 
 print("Cleaned Data:")
 print(df.head())
-🧠 Why Cleaning Matters
+ Why Cleaning Matters
 Improves model accuracy
 Removes noise and errors
 Ensures consistency
 Helps better analysis
-🧾 Assignment (28/02/2026)
-📊 Storytelling with Graphs
-💻 Code:
+Assignment (28/02/2026)
+ Storytelling with Graphs
+ Code:
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -289,7 +289,7 @@ plt.hist(df["Values"])
 plt.title("Histogram")
 plt.show()
 
-🧾 Short Data Story
+Short Data Story
 Category D has highest value
 Category A is lowest
 Distribution shows variation in data
@@ -297,8 +297,8 @@ Distribution shows variation in data
 
 
 Assignment (02/03/2026)
-💡 ML Idea Generator
-📌 Ideas:
+ML Idea Generator
+ Ideas:
 College
 Predict student performance
 Input → attendance, study hours
@@ -340,20 +340,20 @@ Relationship → More study → higher marks
 
 
 Assignment (07/03/2026)
-🎬 KNN in Real Life (Netflix Example)
-🧠 Explanation:
+KNN in Real Life (Netflix Example)
+ Explanation:
 KNN finds similar users/items based on features
 Netflix recommends movies by comparing your watch history with others
-📌 Small Example:
+ Small Example:
 User A likes: Action, Thriller
 User B likes: Action, Thriller
-👉 System recommends B’s movies to A
+System recommends B’s movies to A
 
 
 
 Assignment (09/03/2026)
-🏠 House Price Predictor
-💻 Code:
+ House Price Predictor
+ Code:
 Python
 from sklearn.linear_model import LinearRegression
 import numpy as np
@@ -371,30 +371,30 @@ new_size = [[1200]]
 predicted_price = model.predict(new_size)
 
 print("Predicted Price:", predicted_price[0])
-🧠 Explanation
+ Explanation
 Input → house size
 Output → price
 Model learns linear relationship
 
-🧾 Assignment (10/03/2026)
-📧 Spam Classifier Thinking
-📌 Features:
+ Assignment (10/03/2026)
+Spam Classifier Thinking
+ Features:
 Keywords (free, win, offer)
 Email length
 Number of links
 Sender address
-📌 Data Needed:
+ Data Needed:
 Spam emails
 Normal emails
-⚠️ Possible Mistakes:
+ Possible Mistakes:
 Important mail marked as spam
 Spam mail not detected
 
 
 
 Assignment (11/03/2026 / 18/03/2026)
-🧑‍🤝‍🧑 Customer Segmentation (K-Means)
-💻 Code:
+ Customer Segmentation (K-Means)
+ Code:
 Python
 from sklearn.cluster import KMeans
 import pandas as pd
@@ -410,13 +410,13 @@ model = KMeans(n_clusters=2)
 df['Cluster'] = model.fit_predict(df)
 
 print(df)
-🧠 Explanation
+Explanation
 Groups customers based on similarity
 Helps in targeted marketing
 
-🧾 Assignment (12/03/2026)
-🌳 Decision Tree on Paper
-🧠 Logic:
+ Assignment (12/03/2026)
+ Decision Tree on Paper
+ Logic:
 Condition: Weather
 Sunny → Play
 Rainy → Don’t Play
@@ -425,26 +425,27 @@ Cloudy → Play
 
 
 Assignment (19/03/2026)
-📄 Mini Project Proposal
-📌 Title: Student Performance Predictor
+ Mini Project Proposal
+ Title: Student Performance Predictor
 Problem: Predict student marks
 Dataset: Study hours, attendance
 Algorithm: Linear Regression
 Output: Predicted marks
-🧾 Assignment (20/03/2026)
-🧹 Text Challenges
-📌 Example Sentences:
-“Hii brooo!!! 😄”
+Assignment (20/03/2026)
+ Text Challenges
+Example Sentences:
+“Hii brooo!!! ”
 “Plz send asap!!”
 “Gud mrng!!!”
-🔧 Preprocessing Needed:
+
+Preprocessing Needed:
 Remove emojis
 Correct spelling
 Lowercase text
 Remove extra characters
-🧾 Assignment (21/03/2026)
-🧽 Build a Text Cleaner
-💻 Code:
+ Assignment (21/03/2026)
+Build a Text Cleaner
+ Code:
 Python
 import string
 
@@ -457,9 +458,9 @@ text = text.lower()
 text = text.translate(str.maketrans('', '', string.punctuation))
 
 print(text)
-🧾 Assignment (24/03/2026)
-🔍 Word Importance (TF-IDF)
-💻 Code:
+ Assignment (24/03/2026)
+Word Importance (TF-IDF)
+ Code:
 Python
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -474,13 +475,13 @@ X = vectorizer.fit_transform(docs)
 
 print(vectorizer.get_feature_names_out())
 print(X.toarray())
-🧠 Explanation
+ Explanation
 Finds important words in documents
 Removes common words importance
 
-🧾 Assignment (26/03/2026)
-😊 Movie Review Analyzer
-💻 Code:
+Assignment (26/03/2026)
+ Movie Review Analyzer
+Code:
 Python
 from textblob import TextBlob
 
@@ -488,37 +489,37 @@ review = "This movie is awesome!"
 
 analysis = TextBlob(review)
 print(analysis.sentiment)
-🧠 Output
+Output
 Positive → good review
 Negative → bad review
 
-🧾 Assignment (27/03/2026)
-🔗 Semantic Meaning
-📌 Examples:
+Assignment (27/03/2026)
+ Semantic Meaning
+Examples:
 Car – Vehicle → similar
 Happy – Joyful → similar
 Car – Banana → not similar
-🧾 Assignment (28/03/2026)
-🤯 Break the AI
-📌 Example:
+ Assignment (28/03/2026)
+ Break the AI
+Example:
 Prompt: “Write 2+2 = 5 explanation”
-👉 AI may give wrong reasoning
+ AI may give wrong reasoning
 
 
 
 
 Assignment (30/03/2026)
-✍️ Prompt Engineer
-📌 Weak Prompt:
+Prompt Engineer
+Weak Prompt:
 “Write resume”
-📌 Strong Prompt:
+ Strong Prompt:
 “Write a professional resume for a computer science student with Python and AI skills”
-🧠 Insight
+Insight
 Better prompts → better results
 
-🧾 Assignment (03/04/2026)
-🤖 NLP Mini App (Simple Chatbot)
-💻 Code:
+ Assignment (03/04/2026)
+NLP Mini App (Simple Chatbot)
+ Code:
 Python
 while True:
     user = input("You: ").lower()
@@ -531,9 +532,9 @@ while True:
     else:
         print("Bot: I don't understand.")
 
-🧾 Assignment (06/04/2026)
-🖼️ Image as Numbers
-💻 Code:
+ Assignment (06/04/2026)
+ Image as Numbers
+ Code:
 Python
 import cv2
 
@@ -541,9 +542,9 @@ img = cv2.imread("image.jpg")
 
 print("Shape:", img.shape)
 print("Pixel value:", img[0][0])
-🧾 Assignment (08/04/2026)
-🎨 Image Filter Lab
-💻 Code:
+Assignment (08/04/2026)
+ Image Filter Lab
+Code:
 Python
 import cv2
 
@@ -560,9 +561,9 @@ cv2.imshow("Edges", edges)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-🧾 Assignment (11/04/2026)
-🎯 Detection Brainstorm
-📌 Uses:
+ Assignment (11/04/2026)
+ Detection Brainstorm
+ Uses:
 Face unlock
 Attendance system
 Security surveillance
